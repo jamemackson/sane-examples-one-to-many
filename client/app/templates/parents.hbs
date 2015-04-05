@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        {{#link-to 'parents.new'}}Create New Parent{{/link-to}}
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <table class="table table-bordered table-striped">
+                <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th></th>
+                </thead>
+                <tbody>
+                {{#each model as |parent|}}
+                    <tr>
+                        <td>{{parent.name}}</td>
+                        <td>{{parent.age}}</td>
+                        <td>{{#link-to 'parent' parent}}View{{/link-to}}</td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-6">
+            {{outlet}}
+        </div>
+    </div>
+</div>
+

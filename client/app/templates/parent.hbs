@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        {{#link-to 'parents'}}Back to Parents{{/link-to}}
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Parent</h2>
+            <p>Name: {{model.name}}</p>
+            <p>Age:  {{model.age}}</p>
+            <p>Children {{model.children.length}}</p>
+            {{#link-to 'parent.children' model}}View Children{{/link-to}}
+        </div>
+        <div class="col-sm-6">
+            {{outlet}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/bower_components
+/node_modules
+
+# web/php storm files
+/.idea
