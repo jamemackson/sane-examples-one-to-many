@@ -15,6 +15,8 @@ export default Router.map(function() {
     this.route('children', function() {
       this.route('new');
     });
-    this.route('child', { path: ':child_id'}, function() {});
+    this.route('child', { path: '/child/:child_id'}, function() {
+      this.route('edit');
+    });
   });
 });
