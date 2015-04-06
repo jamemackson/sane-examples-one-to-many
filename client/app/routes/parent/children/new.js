@@ -25,8 +25,18 @@ export default Ember.Route.extend({
   actions: {
     update: function(model) {
       //model.set('parent', parent);
-      model.save();
-      this.transitionTo('parent.children');
+      var self = this;
+      return model.save().then(
+        function(child) {
+          //self.store.push('child', child);
+
+          self.transitionTo('parent.children');
+        }, function(reason) {
+          console.log('error deleting child: ' + reason);
+          self.transitionTo('parent.children');
+        }
+      );
+
     }
   }
 });
