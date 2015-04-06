@@ -6,8 +6,13 @@ export default Ember.Route.extend({
   },
   actions: {
     update: function(model) {
-      model.save();
-      this.transitionTo('parent.children');
+      var _this = this;
+      return model.save().then(function() {
+        _this.finishedEditing();
+      }, function(reason) {
+        console.log('error saving child: ' + reason);
+        _this.finishedEditing();
+      });
     },
     delete: function(model) {
       var _this = this;
