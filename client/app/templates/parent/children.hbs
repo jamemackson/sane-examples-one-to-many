@@ -1,13 +1,1 @@
-<div class="row">
-    {{#link-to 'parent.children.new'}}Create New Child{{/link-to}}
-</div>
-<div class="row">
-    {{#each model as |child|}}
-
-        <p>{{child.name}}: {{child.age}} | {{#link-to 'parent.child.edit' child class="btn btn-default'"}}edit{{/link-to}}</p>
-
-    {{/each}}
-</div>
-<div class="row">
 {{outlet}}
-</div>
