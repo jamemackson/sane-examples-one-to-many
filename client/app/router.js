@@ -12,9 +12,7 @@ export default Router.map(function() {
   });
 
   this.route('parent', { path: '/parent/:parent_id'}, function() {
-    this.route('children', function() {
-      this.route('new');
-    });
+    this.route('children', function() {});
     this.route('child', { path: '/child/:child_id'}, function() {
       this.route('edit');
     });

@@ -1,17 +1,27 @@
 <div class="row">
-  {{#link-to 'parent.children.new' classNames="btn btn-info"}}Create New Child (parent.children.new)<br>(doesnt fresh right away){{/link-to}}
-</div>
-<div class="row">&nbsp;</div>
-<div class="row">
-  {{#link-to 'parent.new-child' classNames="btn btn-info"}}Create New Child (parent.new-child)<br>(DOES fresh right away){{/link-to}}
+  {{#link-to 'parent.new-child' classNames="btn btn-info"}}Create New Child{{/link-to}}
 </div>
 <div class="row">
   <hr>
-    {{#each model as |child|}}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |child|}}
+          <tr>
+            <td>{{child.name}}</td>
+            <td>{{child.age}}</td>
+            <td>{{#link-to 'parent.child.edit' child classNames="btn btn-default"}}edit{{/link-to}}</td>
+          </tr>
+      {{/each}}
+    </tbody>
+  </table>
 
-        <p>{{child.name}}: {{child.age}} | {{#link-to 'parent.child.edit' child class="btn btn-default'"}}edit{{/link-to}}</p>
-
-    {{/each}}
 </div>
 <div class="row">
 {{outlet}}
