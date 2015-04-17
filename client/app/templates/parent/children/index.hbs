@@ -1,5 +1,21 @@
 <div class="row">
-  {{#link-to 'parent.new-child' classNames="btn btn-info"}}Create New Child{{/link-to}}
+  {{#link-to 'parent.new-child' classNames="btn btn-info"}}Create New Child (via route){{/link-to}}
+  <div class="clearFix">&nbsp;</div>
+  <div class="col-sm-6">
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="new-client-name" placeholder="child name"/>
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" name="age" id="new-client-age" placeholder="child age"/>
+      </div>
+
+      <button class="btn btn-info" {{action 'createChild'}}>Create Child (via action)</button>
+    </form>
+
+  </div>
 </div>
 <div class="row">
   <hr>
